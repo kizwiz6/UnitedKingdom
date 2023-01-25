@@ -1,0 +1,9 @@
+﻿The Country class has a single responsibility for holding information about a country.
+
+The IDisplay interface and ConsoleDisplay class have a single responsibility of displaying information to the console.  the ConsoleDisplay class is a specific implementation of IDisplay interface to display the information on the console. But if in future we need to display information on a GUI or web application, we can use different class which implements IDisplay interface but it doesn't need to implement any other method which is not relevant to its specific use case.
+
+The CountryInformationService class has a single responsibility of displaying information about a country using the IDisplay interface.
+
+The CountryInformationService class is depend on the IDisplay interface, which allows to use different display mechanism in future. This interface is specific to displaying information, and it only defines one method Show(string message). This means that any class that implements the IDisplay interface only needs to implement the Show method, and does not need to implement any other methods that may not be relevant to its specific use case. By using the IDisplay interface in this way, the CountryInformationService class is not forced to depend on methods that it does not use, and classes that implement the IDisplay interface are not forced to implement methods that they do not need. This allows for greater flexibility and reusability of the code, and it also makes the code easier to understand and maintain.
+
+The Main method has a single responsibility of creating objects and calling methods to run the program.
